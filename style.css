@@ -76,14 +76,17 @@ section:last-of-type { border-bottom: 0; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
   gap: 40px;
-  align-items: end;
+  align-items: center;
   padding-top: 72px;
   padding-bottom: 48px;
 }
+/* 見出しは説明の文。大きな明朝だと詩に見えるので、ゴシックで控えめに */
 .hero h1 {
-  font-size: clamp(2rem, 4.6vw, 3.2rem);
-  line-height: 1.45;
-  margin-bottom: 0.7em;
+  font-family: var(--text);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  line-height: 1.6;
+  margin-bottom: 0.9em;
   color: var(--ink);
 }
 .lead { font-size: 1.05rem; }
