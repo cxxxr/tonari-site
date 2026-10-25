@@ -29,13 +29,20 @@
       const a = assets.find((x) => match[b.dataset.os]?.(x.name));
       if (a) b.href = a.browser_download_url;
     }
-    if (mineBtn && mineBtn.href !== main.href) {
+    const appimage = assets.find((x) => match.appimage(x.name));
+    const appimageLink = document.getElementById("dl-appimage");
+    if (appimage && appimageLink) appimageLink.href = appimage.browser_download_url;
+    // 自分の OS のファイルが分かったときだけ、上のボタンを直接のダウンロードにする
+    if (mineBtn && /\/download\//.test(mineBtn.href)) {
       main.href = mineBtn.href;
       const label = { mac: "macOS", win: "Windows", deb: "Linux" }[mine];
       main.textContent = `${label} 向けをダウンロード`;
-      note.textContent = `${rel.tag_name ?? ""}。ほかの OS は下の「入れる」から`.replace(/^。/, "");
-    } else if (rel.tag_name) {
-      note.textContent = `${rel.tag_name}。macOS（Apple シリコン）・Windows・Linux`;
+      note.textContent = `${rel.tag_name ?? ""}。ほかの OS と、初めて開くときの手順`.replace(/^。/, "");
+    }
+    const metaVersion = document.getElementById("meta-version");
+    if (metaVersion && rel.tag_name && rel.published_at) {
+      const d = new Date(rel.published_at);
+      metaVersion.textContent = `最新の版は ${rel.tag_name}（${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日公開）。`;
     }
     if (rel.tag_name && rel.published_at) {
       const d = new Date(rel.published_at);

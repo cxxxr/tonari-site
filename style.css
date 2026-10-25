@@ -90,6 +90,7 @@ section:last-of-type { border-bottom: 0; }
   color: var(--ink);
 }
 .lead { font-size: 1.05rem; }
+.facts { color: var(--ink-soft); font-size: 0.95rem; }
 .dl { margin-top: 2em; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .dl-note { color: var(--ink-soft); font-size: 0.92rem; }
 
@@ -139,21 +140,31 @@ section:last-of-type { border-bottom: 0; }
 .work-shot img { border-radius: 6px; }
 
 /* 入れる */
-.os { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 1.2em 0 0.8em; }
+.os { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 1.6em 0 1em; }
+.os li { border-top: 1.5px solid var(--ink); padding-top: 16px; }
+.os .btn { width: 100%; }
+.os-how { font-size: 0.92rem; color: var(--ink-soft); margin: 10px 0 0; }
 .version { color: var(--ink-soft); font-size: 0.92rem; }
-.install h3 { margin-top: 2.2em; margin-bottom: 0.5em; }
-.needs { list-style: none; max-width: var(--measure); }
+
+.needs { list-style: none; max-width: 44em; }
 .needs li { padding: 10px 0 10px 18px; border-left: 2px solid var(--rule); margin-bottom: 8px; }
 
-/* 見ないもの: この節だけ地の色を変え、宣言として読ませる */
-.privacy { background: var(--skin); margin: 0 -16px; padding: 64px 16px; border-bottom: 0; }
-.privacy > * { max-width: 640px; margin-left: auto; margin-right: auto; }
+/* 見ないもの: Hero の直後。この節だけ地の色を変え、宣言として読ませる */
+.privacy { background: var(--skin); margin: 0 -16px; padding: 56px 16px; border-bottom: 0; }
+.privacy > * { max-width: 1048px; margin-left: auto; margin-right: auto; }
+.privacy p { max-width: var(--measure); margin-left: 0; }
 .rules { list-style: none; }
-.rules li { padding: 12px 0; border-top: 1px solid var(--rule); }
+.rules li { padding: 12px 0; border-top: 1px solid var(--rule); max-width: 44em; }
 .rules li:last-child { border-bottom: 1px solid var(--rule); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .privacy { background: var(--paper-deep); }
 }
+
+/* よくある質問 */
+.qa > div { border-top: 1px solid var(--rule); padding: 16px 0; max-width: 44em; }
+.qa > div:last-child { border-bottom: 1px solid var(--rule); }
+.qa dt { font-weight: 700; }
+.qa dd { margin: 4px 0 0; color: var(--ink-soft); font-size: 0.98rem; }
 
 /* スマホ */
 .phone { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 48px; align-items: center; border-bottom: 0; }
@@ -162,12 +173,16 @@ section:last-of-type { border-bottom: 0; }
 
 .foot { border-top: 1px solid var(--rule); max-width: 1080px; margin: 0 auto; padding: 40px 16px 56px; color: var(--ink-soft); font-size: 0.92rem; }
 .foot p { max-width: none; margin-bottom: 0.6em; }
+.meta > div { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 12px; padding: 8px 0; max-width: 52em; }
+.meta dt { color: var(--ink); font-weight: 500; }
+.meta dd { margin: 0; }
 .foot-brand { font-family: var(--display); color: var(--ink); font-size: 1.1rem; margin-top: 1.6em; }
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; align-items: start; padding-top: 48px; }
   .hero-shot { justify-self: stretch; max-width: 420px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .os { grid-template-columns: 1fr; }
   .work { grid-template-columns: 1fr; }
   .work-shot { justify-self: start; max-width: 360px; }
   .phone { grid-template-columns: 1fr; }
@@ -176,7 +191,7 @@ section:last-of-type { border-bottom: 0; }
   body { font-size: 16px; }
   .steps { grid-template-columns: 1fr; }
   .topnav { gap: 14px; font-size: 0.9rem; }
-  .os li, .os .btn { width: 100%; }
+  .meta > div { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .btn { transition: background-color 120ms ease; }
