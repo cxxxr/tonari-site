@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tonari</title>
-<meta name="description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。画面の隅でペルソナが自分の作業をし、25 分ごとに「そっちどう？」と声をかけます。無料。macOS・Windows・Linux。画面もキー入力も見ません。">
+<meta name="description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。画面の隅でペルソナが自分の作業をし、25 分ごとに「そっちどう？」と声をかけます。macOS・Windows・Linux。画面もキー入力も見ません。">
 <meta property="og:title" content="tonari">
-<meta property="og:description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。無料。macOS・Windows・Linux。画面もキー入力も見ません。">
+<meta property="og:description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。macOS・Windows・Linux。画面もキー入力も見ません。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://cxxxr.github.io/tonari-site/images/screenshot.png">
 <meta property="og:url" content="https://cxxxr.github.io/tonari-site/">
@@ -35,7 +35,7 @@
   <div class="hero-text">
     <h1 id="hero-title">隣の席で AI が作業している、<br>集中のためのデスクトップアプリ。</h1>
     <p class="lead">画面の隅で AI のキャラクター（ペルソナ）が自分のプロジェクトを進め、ときどき独り言を言います。その隣で自分の作業をして、25 分たつと休憩。「そっちどう？」と声がかかります。</p>
-    <p class="facts">無料。macOS（Apple シリコン）・Windows・Linux。アカウントは要りません。画面もキー入力も見ません。</p>
+    <p class="facts">今の版は無料で、アカウントも要りません。macOS（Apple シリコン）・Windows・Linux。画面もキー入力も見ません。</p>
     <div class="dl" id="dl">
       <a class="btn btn-primary" id="dl-main" href="#install">ダウンロード</a>
       <a class="dl-note" id="dl-note" href="#install">ほかの OS と、初めて開くときの手順</a>
@@ -54,7 +54,7 @@
     <li>画面の内容もキー入力の中身も見ません。カメラもマイクも使いません。あなたの様子として使うのは「最後に入力してから何秒たったか」だけです。</li>
     <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面・ファイル・キー入力は送りません。</li>
     <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身から判断して止めているので、完全には防げません。</li>
-    <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。tonari のサーバーはありません。</li>
+    <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。今の版では、tonari がどこかのサーバーに何かを集めることはありません。</li>
     <li>ランキングも、連続記録の催促もありません。</li>
   </ul>
 </section>
@@ -146,11 +146,11 @@
   <dl class="qa">
     <div>
       <dt>お金はかかりますか？</dt>
-      <dd>tonari は無料です。考えるのに使う AI を OpenCode の無料のモデルにすれば、費用はかかりません。Anthropic の API キーで使うときだけ、使った分の API の利用料がかかります（上の「用意するものと費用」）。</dd>
+      <dd>今の版は無料で、tonari に払うものはありません。考えるのに使う AI を OpenCode の無料のモデルにすれば、ほかにかかる費用もありません。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（上の「用意するものと費用」）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
     </div>
     <div>
       <dt>何がどこに送られますか？</dt>
-      <dd>あなたの宣言と休憩中の返事、ペルソナ自身の作業の出来事が、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）に送られます。あなたの画面・ファイル・キー入力は送りません。tonari のサーバーはなく、記録は PC の中にだけあります。</dd>
+      <dd>あなたの宣言と休憩中の返事、ペルソナ自身の作業の出来事が、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）に送られます。あなたの画面・ファイル・キー入力は送りません。記録は PC の中にだけあり、今の版では tonari がどこかに集めることはありません。</dd>
     </div>
     <div>
       <dt>ペルソナは本当に AI ですか？</dt>
@@ -180,7 +180,7 @@
 <footer class="foot">
   <dl class="meta">
     <div><dt>作者</dt><dd><a href="https://github.com/cxxxr">cxxxr</a>。一人の部屋だと手が止まるので、隣で誰かが作業している状態を自分の机に作りました。</dd></div>
-    <div><dt>種別</dt><dd>無料のデスクトップアプリ。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span></dd></div>
+    <div><dt>種別</dt><dd>デスクトップアプリ。今の版は無料。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span>このページはその版の時点の説明で、費用や用意するものは版が上がると変わることがあります。</dd></div>
     <div><dt>アバター</dt><dd>既定のアバターは VRoid Hub で配布されているモデルで、再配布・改変・商用利用が許されていて、クレジットの表記は要りません。自分の VRM に替えられます。</dd></div>
     <div><dt>声</dt><dd>既定の声は AivisSpeech の凛音エルです。声のモデルの利用規約は、AivisHub のモデルのページで確認してください。</dd></div>
   </dl>
