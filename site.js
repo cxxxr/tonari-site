@@ -67,3 +67,21 @@
     v.controls = true;
   }
 })();
+
+// 「声を聞く」: 既定は無音で自動再生。押すと音を出して頭から流す。もう一度押すと消す
+(() => {
+  const v = document.getElementById("hero-video");
+  const b = document.getElementById("unmute");
+  if (!v || !b) return;
+  b.addEventListener("click", () => {
+    if (v.muted) {
+      v.muted = false;
+      v.currentTime = 0;
+      void v.play();
+      b.textContent = "音を消す";
+    } else {
+      v.muted = true;
+      b.textContent = "声を聞く";
+    }
+  });
+})();
