@@ -56,3 +56,14 @@
     // ネットワークが無いときなどは、そのまま
   }
 })();
+
+// 動きを減らす設定の人には、動画を自動では流さない（ポスターのまま。押せば再生）
+(() => {
+  const v = document.getElementById("hero-video");
+  if (!v) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    v.removeAttribute("autoplay");
+    v.pause();
+    v.controls = true;
+  }
+})();

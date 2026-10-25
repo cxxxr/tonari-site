@@ -117,7 +117,7 @@ section:last-of-type { border-bottom: 0; }
   padding: 10px;
   box-shadow: 0 30px 60px -30px rgba(20, 24, 34, 0.55);
 }
-.hero-shot img { border-radius: 8px; }
+.hero-shot img, .hero-shot video { border-radius: 8px; display: block; max-width: 100%; height: auto; background: var(--room); }
 .hero-shot figcaption { color: #b8bcc6; font-size: 0.85rem; padding: 10px 4px 2px; margin: 0; }
 
 /* 一日の流れ: 本当に順番があるので番号を付ける */
