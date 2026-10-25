@@ -9,11 +9,12 @@
   --hair: #5a3b30;
   --moss: #2f7d4f;
   --moss-deep: #256640;
+  --on-moss: #ffffff;
   --skin: #f3e9e3;
   --rule: #cfd3db;
   --link: #3f5a8a;
-  --display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --text: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --text: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans CJK JP", "BIZ UDPGothic", "Yu Gothic UI", Meiryo, system-ui, sans-serif;
+  --display: var(--text);
   --measure: 36em;
   color-scheme: light dark;
 }
@@ -27,8 +28,9 @@
     --room-edge: #2a2f3a;
     --hair: #c79a85;
     --moss: #4fa872;
-    --moss-deep: #3c8c5a;
-    --skin: #2a2a30;
+    --moss-deep: #5fb982;
+    --on-moss: #0f1a14;
+    --skin: #2b2630;
     --rule: #353a45;
     --link: #93aee0;
   }
@@ -48,7 +50,8 @@ body {
 a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:focus-visible, .btn:focus-visible { outline: 3px solid var(--moss); outline-offset: 3px; }
 img { max-width: 100%; height: auto; display: block; }
-h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; letter-spacing: 0.01em; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0; letter-spacing: 0.01em; }
+.nw { white-space: nowrap; }
 h2 { font-size: 1.7rem; line-height: 1.5; margin-bottom: 0.8em; }
 h3 { font-size: 1.1rem; line-height: 1.6; }
 p { margin: 0 0 1.1em; max-width: var(--measure); }
@@ -62,7 +65,7 @@ small { font-size: 0.78em; }
   padding: 22px 16px 0;
   max-width: 1080px; margin: 0 auto;
 }
-.brand { font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
 .topnav { display: flex; gap: 22px; font-size: 0.95rem; }
 .topnav a { color: var(--ink-soft); text-decoration: none; }
 .topnav a:hover { color: var(--ink); text-decoration: underline; }
@@ -104,7 +107,7 @@ section:last-of-type { border-bottom: 0; }
 }
 .btn small { color: var(--ink-soft); font-weight: 400; }
 .btn:hover { background: var(--paper-deep); }
-.btn-primary { background: var(--moss); border-color: var(--moss); color: #fff; font-weight: 700; padding: 8px 28px; }
+.btn-primary { background: var(--moss); border-color: var(--moss); color: var(--on-moss); font-weight: 700; padding: 8px 28px; }
 .btn-primary:hover { background: var(--moss-deep); border-color: var(--moss-deep); }
 .btn.is-mine { border-color: var(--moss); box-shadow: inset 0 0 0 1px var(--moss); }
 
@@ -118,10 +121,12 @@ section:last-of-type { border-bottom: 0; }
   box-shadow: 0 30px 60px -30px rgba(20, 24, 34, 0.55);
 }
 .hero-shot img, .hero-shot video { border-radius: 8px; display: block; max-width: 100%; height: auto; background: var(--room); }
-.hero-shot figcaption { color: #b8bcc6; font-size: 0.85rem; padding: 10px 4px 2px; margin: 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
-.unmute { font-family: var(--text); font-size: 0.85rem; color: #e9e7ec; background: transparent; border: 1px solid #5a6070; border-radius: 6px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
-.unmute:hover { background: #2a2f3a; }
-.unmute:focus-visible { outline: 3px solid var(--moss); outline-offset: 2px; }
+.hero-shot figcaption { color: #c5c9d2; font-size: 0.85rem; line-height: 1.6; padding: 10px 4px 2px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.video-buttons { display: flex; gap: 8px; }
+.vbtn { font-family: var(--text); font-size: 0.85rem; color: #e9e7ec; background: transparent; border: 1px solid #9aa3b5; border-radius: 6px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+.vbtn:hover { background: #2a2f3a; }
+.vbtn:focus-visible { outline: 3px solid var(--moss); outline-offset: 2px; }
+.vbtn[hidden] { display: none; }
 
 /* 一日の流れ: 本当に順番があるので番号を付ける */
 .steps { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
@@ -150,11 +155,13 @@ section:last-of-type { border-bottom: 0; }
 .version { color: var(--ink-soft); font-size: 0.92rem; }
 
 .needs { list-style: none; max-width: 44em; }
-.needs li { padding: 10px 0 10px 18px; border-left: 2px solid var(--rule); margin-bottom: 8px; }
+.needs > li { padding: 10px 0 10px 18px; border-left: 2px solid var(--rule); margin-bottom: 8px; }
+.needs-sub { list-style: none; margin-top: 6px; }
+.needs-sub li { padding: 6px 0 6px 14px; }
 
 /* 見ないもの: Hero の直後。この節だけ地の色を変え、宣言として読ませる */
-.privacy { background: var(--skin); margin: 0 -16px; padding: 56px 16px; border-bottom: 0; }
-.privacy > * { max-width: 1048px; margin-left: auto; margin-right: auto; }
+.privacy { background: var(--skin); margin: 0; padding: 56px 24px; border-bottom: 0; border-radius: 12px; }
+.privacy > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
 .privacy p { max-width: var(--measure); margin-left: 0; }
 .rules { list-style: none; }
 .rules li { padding: 12px 0; border-top: 1px solid var(--rule); max-width: 44em; }
@@ -169,10 +176,6 @@ section:last-of-type { border-bottom: 0; }
 .qa dt { font-weight: 700; }
 .qa dd { margin: 4px 0 0; color: var(--ink-soft); font-size: 0.98rem; }
 
-/* スマホ */
-.phone { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 48px; align-items: center; border-bottom: 0; }
-.phone-shot { margin: 0; background: var(--room); border: 1px solid var(--room-edge); border-radius: 28px; padding: 8px; width: 230px; }
-.phone-shot img { border-radius: 20px; }
 
 .foot { border-top: 1px solid var(--rule); max-width: 1080px; margin: 0 auto; padding: 40px 16px 56px; color: var(--ink-soft); font-size: 0.92rem; }
 .foot p { max-width: none; margin-bottom: 0.6em; }
@@ -188,7 +191,6 @@ section:last-of-type { border-bottom: 0; }
   .os { grid-template-columns: 1fr; }
   .work { grid-template-columns: 1fr; }
   .work-shot { justify-self: start; max-width: 360px; }
-  .phone { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
   body { font-size: 16px; }

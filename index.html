@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>tonari</title>
+<title>tonari - 隣の席で AI が作業する集中アプリ</title>
 <meta name="description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。画面の隅でペルソナが自分の作業をし、25 分ごとに「そっちどう？」と声をかけます。macOS・Windows・Linux。画面もキー入力も見ません。">
 <meta property="og:title" content="tonari">
+<meta property="og:site_name" content="tonari">
+<meta property="og:locale" content="ja_JP">
 <meta property="og:description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。macOS・Windows・Linux。画面もキー入力も見ません。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://cxxxr.github.io/tonari-site/images/screenshot.png">
+<meta property="og:image" content="https://cxxxr.github.io/tonari-site/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="tonari の画面。画面の隅にペルソナがいて、パネルに残り時間と入力欄が出ている">
 <meta property="og:url" content="https://cxxxr.github.io/tonari-site/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,9 +35,9 @@
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-text">
-    <h1 id="hero-title">隣の席で AI が作業している、<br>集中のためのデスクトップアプリ。</h1>
-    <p class="lead">画面の隅で AI のキャラクター（ペルソナ）が自分のプロジェクトを進め、ときどき独り言を言います。その隣で自分の作業をして、25 分たつと休憩。「そっちどう？」と声がかかります。</p>
-    <p class="facts">今の版は無料で、アカウントも要りません。macOS（Apple シリコン）・Windows・Linux。画面もキー入力も見ません。</p>
+    <h1 id="hero-title"><span class="nw">隣の席で AI が作業している、</span><br><span class="nw">集中のための</span><span class="nw">デスクトップアプリ。</span></h1>
+    <p class="lead">一人だと手が止まりがちな人のためのアプリです。画面の隅で AI のキャラクター（ペルソナ）が自分のプロジェクトを進め、ときどき独り言を言います。その隣で自分の作業をして、25 分たつと休憩。「そっちどう？」と声がかかります。</p>
+    <p class="facts">今の版は無料で、アカウントも要りません。プログラマでなくても使えます。macOS（Apple シリコン）・Windows・Linux。画面もキー入力も見ません。</p>
     <div class="dl" id="dl">
       <a class="btn btn-primary" id="dl-main" href="#install">ダウンロード</a>
       <a class="dl-note" id="dl-note" href="#install">ほかの OS と、初めて開くときの手順</a>
@@ -46,7 +48,10 @@
       <source src="video/story.mp4" type="video/mp4">
       <img src="images/screenshot.png" width="460" height="640" alt="休憩中の tonari。ペルソナが画面の隅にいて、パネルに残り時間と「そっちどう？」の入力欄が出ている">
     </video>
-    <figcaption>実際の画面の録画です（78 秒。作業者側の入力は撮影用に打ったもの）。右下に、このくらいの大きさで居ます。<button type="button" class="unmute" id="unmute">声を聞く</button></figcaption>
+    <figcaption>
+      <span>tonari の実際の画面を録って、6 場面を 78 秒につないだものです。ペルソナの作業は前の回の記録を再生したもので、声はあとから同じ声で付けました。あなた側の入力は撮影用に打ったものです。右下に、このくらいの大きさでいます。</span>
+      <span class="video-buttons"><button type="button" class="vbtn" id="unmute">声を聞く</button><button type="button" class="vbtn" id="pause" aria-pressed="false">止める</button></span>
+    </figcaption>
   </figure>
 </section>
 
@@ -55,10 +60,10 @@
   <p>隣にいるためのアプリなので、あなたを見張るものにはしていません。</p>
   <ul class="rules">
     <li>画面の内容もキー入力の中身も見ません。カメラもマイクも使いません。あなたの様子として使うのは「最後に入力してから何秒たったか」だけです。</li>
-    <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面・ファイル・キー入力は送りません。</li>
-    <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身から判断して止めているので、完全には防げません。</li>
+    <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面とキー入力は送りません。「手伝う」を選んだときは、任せたリポジトリの複製のファイルを AI が読むので、その中身も AI の提供元に送られます。「見守る」では、Claude が書いたコミットの件名とブランチ名を送ります。</li>
+    <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身を見て止めていますが、すべては防げません。</li>
     <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。今の版では、tonari がどこかのサーバーに何かを集めることはありません。</li>
-    <li>ランキングも、連続記録の催促もありません。</li>
+    <li>ランキングはありません。連続の日数は出しますが、途切れても責めません。</li>
   </ul>
 </section>
 
@@ -75,7 +80,7 @@
     </li>
     <li>
       <h3>区切りで休憩</h3>
-      <p>25 分で休憩に入ります。休憩中は、入力欄からペルソナと短く話せます。</p>
+      <p>25 分で休憩に入ります。休憩中は、入力欄からペルソナと短く話せます。休憩が終わると、また作業に戻ります。長さは設定で変えられます。</p>
     </li>
     <li>
       <h3>振り返る</h3>
@@ -95,8 +100,8 @@
         <dd>ペルソナが自分の作業場所で、自分のアプリを毎日少しずつ作ります。最初は読書記録アプリ「ほんだな」です。</dd>
       </div>
       <div>
-        <dt>録画を流す</dt>
-        <dd>前にした自分の作業の録画を、そのときの間隔で流します。AI は考えないので、利用枠も費用も使いません。独り言には「このときは…」と、録画だと分かる言い方をします。</dd>
+        <dt>録画を流す（次の版から）</dt>
+        <dd>前にした自分の作業の記録（出来事とその間隔）を、そのとおりに流します。作業の分の AI は動かないので、費用は独り言の分だけです。独り言は前にしたこととして話し、聞かれれば記録の再生だと答えます。</dd>
       </div>
       <div>
         <dt>見守る</dt>
@@ -109,15 +114,19 @@
     </dl>
   </div>
   <figure class="work-shot">
-    <img src="images/choose-work.png" width="460" height="480" alt="作業を選ぶ画面。「自分のプロジェクト（ほんだな）を進める」と「リポジトリを追加」のボタンがある" loading="lazy">
+    <img src="images/choose-work.png" width="460" height="640" alt="作業を選ぶ画面。ペルソナが「こっちはどうしようか？」と聞き、「自分のプロジェクト（ほんだな）を進める」「録画を流す」「リポジトリを追加」のボタンが並ぶ" loading="lazy">
   </figure>
 </section>
 
-<section class="needs-section" aria-labelledby="needs-title">
+<section class="needs-section" id="needs" aria-labelledby="needs-title">
   <h2 id="needs-title">用意するものと費用</h2>
   <ul class="needs">
-    <li><strong>考えるのに使う AI。</strong>初めて起動したときの案内で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
-    <li><strong>Anthropic の API キーで Claude を使うこともできます。</strong>独り言とペルソナの作業の分だけ、API の利用料がかかります。目安は、独り言が 1 区切り（25 分）で数円、ペルソナが本当に自分のプロジェクトを進める分がモデルによって 1 区切り数百円から千円ほどです。「録画を流す」と「見守る」は独り言の分だけです。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。</li>
+    <li><strong>考えるのに使う AI（どちらか）。</strong>
+      <ul class="needs-sub">
+        <li><strong>OpenCode。</strong>初めて起動したときの案内で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
+        <li><strong>Anthropic の API キー。</strong>Claude を使います。独り言とペルソナの作業の分だけ、API の利用料を Anthropic に払います。目安は 2026 年 10 月の作者の手元の例で、独り言が 1 区切り（25 分）で数円、ペルソナが本当に自分のプロジェクトを進める分が 1 区切り数百円から千円ほどでした。モデルと作業量で大きく変わります。「見守る」は独り言の分だけです。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。</li>
+      </ul>
+    </li>
     <li><strong>声（任意）。</strong>ペルソナは <a href="https://aivis-project.com/">AivisSpeech</a> の声で話します。初めて起動したときの「はじめに、声の準備」で「声を入れる」を押すと、tonari が入れます（約 1.8GB）。入れなければ字幕だけになります。</li>
     <li><strong>Node.js。</strong>ペルソナが自分のプロジェクトで使います。初めて始めるときに tonari が落とします（約 50MB。自分で入れている Node.js とは別に置きます）。</li>
   </ul>
@@ -125,11 +134,11 @@
 
 <section class="install" id="install" aria-labelledby="install-title">
   <h2 id="install-title">入れる</h2>
-  <p>自分の OS のファイルをダウンロードして入れ、tonari を起動します。インストーラは署名していないので、初めて開くときに OS の警告が出ます。マルウェアと判定されたわけではありません。それぞれの通し方を、ファイルの下に書いています。</p>
+  <p>自分の OS のファイルをダウンロードして入れ、tonari を起動します。インストーラは署名していないので、初めて開くときに OS の警告が出ます。作者を OS が確かめられないという警告で、危険と判定されたものではありません。それぞれの通し方を、ファイルの下に書いています。</p>
   <ul class="os" id="os">
     <li>
       <a class="btn" data-os="mac" href="https://github.com/cxxxr/tonari-releases/releases/latest">macOS<small>Apple シリコン、.dmg</small></a>
-      <p class="os-how">初めて開くと「開けません」と出ます。一度開こうとしてから「システム設定 → プライバシーとセキュリティ」の下にある「このまま開く」を押してください。macOS 15 以降は、右クリックの「開く」では通れません。</p>
+      <p class="os-how">初めて開くと「開けません」と出ます。一度開こうとしてから「システム設定 → プライバシーとセキュリティ」の下にある「このまま開く」を押してください。macOS 15 以降は、右クリックの「開く」では通れません。Intel の Mac では動きません。</p>
     </li>
     <li>
       <a class="btn" data-os="win" href="https://github.com/cxxxr/tonari-releases/releases/latest">Windows<small>.exe</small></a>
@@ -137,7 +146,7 @@
     </li>
     <li>
       <a class="btn" data-os="deb" href="https://github.com/cxxxr/tonari-releases/releases/latest">Linux<small>.deb</small></a>
-      <p class="os-how">Ubuntu や Debian 系はこちら。<span id="appimage-wrap">AppImage は <a id="dl-appimage" href="https://github.com/cxxxr/tonari-releases/releases/latest">こちら</a>。</span>Ubuntu 24.04 などで AppImage が起動しないときは .deb を使ってください。</p>
+      <p class="os-how">Ubuntu や Debian 系はこちら。ほかは <a id="dl-appimage" href="https://github.com/cxxxr/tonari-releases/releases/latest">AppImage 版</a>。Ubuntu 24.04 などで AppImage が起動しないときは .deb を使ってください。</p>
     </li>
   </ul>
   <p class="version" id="version">版の一覧は <a href="https://github.com/cxxxr/tonari-releases/releases">Releases</a> にあります。</p>
@@ -149,15 +158,15 @@
   <dl class="qa">
     <div>
       <dt>お金はかかりますか？</dt>
-      <dd>今の版は無料で、tonari に払うものはありません。考えるのに使う AI を OpenCode の無料のモデルにすれば、ほかにかかる費用もありません。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（上の「用意するものと費用」）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
+      <dd>今の版は無料で、tonari に払うものはありません。考えるのに使う AI を OpenCode の無料のモデルにすれば、ほかにかかる費用もありません。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#needs">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
     </div>
     <div>
       <dt>何がどこに送られますか？</dt>
-      <dd>あなたの宣言と休憩中の返事、ペルソナ自身の作業の出来事が、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）に送られます。あなたの画面・ファイル・キー入力は送りません。記録は PC の中にだけあり、今の版では tonari がどこかに集めることはありません。</dd>
+      <dd>上の<a href="#privacy">「見ないもの、送らないもの」</a>のとおりです。送り先は、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）です。</dd>
     </div>
     <div>
       <dt>ペルソナは本当に AI ですか？</dt>
-      <dd>はい。人が中にいることはありません。作業も独り言も、その場で AI が作っています。「録画を流す」を選んだときだけ、作業は前に録った記録の再生で、独り言はそれを材料にその場で作ります。</dd>
+      <dd>はい。人が中にいることはありません。作業も独り言も、その場で AI が作っています。</dd>
     </div>
     <div>
       <dt>オフラインで動きますか？</dt>
@@ -183,9 +192,10 @@
 <footer class="foot">
   <dl class="meta">
     <div><dt>作者</dt><dd><a href="https://github.com/cxxxr">cxxxr</a>。一人の部屋だと手が止まるので、隣で誰かが作業している状態を自分の机に作りました。</dd></div>
-    <div><dt>種別</dt><dd>デスクトップアプリ。今の版は無料。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span>このページはその版の時点の説明で、費用や用意するものは版が上がると変わることがあります。</dd></div>
-    <div><dt>アバター</dt><dd>既定のアバターは VRoid Hub で配布されているモデルで、再配布・改変・商用利用が許されていて、クレジットの表記は要りません。自分の VRM に替えられます。</dd></div>
+    <div><dt>種別</dt><dd>デスクトップアプリ。今の版は無料。このページは v0.4.0 の時点の説明で、費用や用意するものは版が上がると変わることがあります。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span></dd></div>
+    <div><dt>アバター</dt><dd>既定のアバターは VRoid Hub で配布されているモデルで、再配布・改変・商用利用が許されていて、クレジットの表記は要りません。付属のサンプルのアバターは、pixiv Inc. の VRM 1.0 のサンプルモデル（(c) 2022 pixiv Inc.、<a href="https://vrm.dev/licenses/1.0/">VRM Public License 1.0</a>）です。自分の VRM に替えられます。</dd></div>
     <div><dt>声</dt><dd>既定の声は AivisSpeech の凛音エルです。声のモデルの利用規約は、AivisHub のモデルのページで確認してください。</dd></div>
+    <div><dt>このページ</dt><dd>最新の版の番号とファイルの場所を GitHub から取ります。それ以外に外へ送るものはなく、計測もしていません。</dd></div>
   </dl>
   <p class="foot-brand">tonari</p>
 </footer>
