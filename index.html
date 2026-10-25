@@ -62,6 +62,7 @@
     <li>画面の内容もキー入力の中身も見ません。カメラもマイクも使いません。あなたの様子として使うのは「最後に入力してから何秒たったか」だけです。</li>
     <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面とキー入力は送りません。「手伝う」を選んだときは、任せたリポジトリの複製のファイルを AI が読むので、その中身も AI の提供元に送られます。「見守る」では、Claude が書いたコミットの件名とブランチ名を送ります。</li>
     <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身を見て止めていますが、すべては防げません。</li>
+    <li>起動したときに 1 日 1 回、新しい版があるかを GitHub に聞きます。あなたを見分けるものは送りません。設定のファイル（<code>user.yaml</code>）で切れます。</li>
     <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。今の版では、tonari がどこかのサーバーに何かを集めることはありません。</li>
     <li>ランキングはありません。連続の日数は出しますが、途切れても責めません。</li>
   </ul>
@@ -123,7 +124,7 @@
   <ul class="needs">
     <li><strong>考えるのに使う AI（どちらか）。</strong>
       <ul class="needs-sub">
-        <li><strong>OpenCode。</strong>初めて起動したときの案内で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
+        <li><strong>OpenCode。</strong>パネルの案内か、設定（歯車）の「作業に使う AI」で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
         <li><strong>Anthropic の API キー。</strong>Claude を使います。独り言とペルソナの作業の分だけ、API の利用料を Anthropic に払います。目安は 2026 年 10 月の作者の手元の例で、独り言が 1 区切り（25 分）で数円、ペルソナが本当に自分のプロジェクトを進める分が 1 区切り数百円から千円ほどでした。モデルと作業量で大きく変わります。「見守る」は独り言の分だけです。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。</li>
       </ul>
     </li>
@@ -162,7 +163,7 @@
     </div>
     <div>
       <dt>何がどこに送られますか？</dt>
-      <dd>上の<a href="#privacy">「見ないもの、送らないもの」</a>のとおりです。送り先は、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）です。</dd>
+      <dd>上の<a href="#privacy">「見ないもの、送らないもの」</a>のとおりです。送り先は、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）です。ほかに、新しい版があるかを GitHub に 1 日 1 回聞きます。</dd>
     </div>
     <div>
       <dt>ペルソナは本当に AI ですか？</dt>
@@ -192,7 +193,7 @@
 <footer class="foot">
   <dl class="meta">
     <div><dt>作者</dt><dd><a href="https://github.com/cxxxr">cxxxr</a>。一人の部屋だと手が止まるので、隣で誰かが作業している状態を自分の机に作りました。</dd></div>
-    <div><dt>種別</dt><dd>デスクトップアプリ。今の版は無料。このページは v0.5.0 の時点の説明で、費用や用意するものは版が上がると変わることがあります。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span></dd></div>
+    <div><dt>種別</dt><dd>デスクトップアプリ。今の版は無料。このページは v0.5.1 の時点の説明で、費用や用意するものは版が上がると変わることがあります。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span></dd></div>
     <div><dt>アバター</dt><dd>既定のアバターは VRoid Hub で配布されているモデルで、再配布・改変・商用利用が許されていて、クレジットの表記は要りません。付属のサンプルのアバターは、pixiv Inc. の VRM 1.0 のサンプルモデル（(c) 2022 pixiv Inc.、<a href="https://vrm.dev/licenses/1.0/">VRM Public License 1.0</a>）です。自分の VRM に替えられます。</dd></div>
     <div><dt>声</dt><dd>既定の声は AivisSpeech の凛音エルです。声のモデルの利用規約は、AivisHub のモデルのページで確認してください。</dd></div>
     <div><dt>このページ</dt><dd>最新の版の番号とファイルの場所を GitHub から取ります。それ以外に外へ送るものはなく、計測もしていません。</dd></div>
