@@ -1,0 +1,180 @@
+/* 色はアプリの画面から: 部屋の濃い青灰、髪の茶、「休憩中」の緑、肌の淡い色 */
+:root {
+  --paper: #eef0f4;
+  --paper-deep: #e3e6ec;
+  --ink: #26242b;
+  --ink-soft: #5a5862;
+  --room: #262b36;
+  --room-edge: #3a404d;
+  --hair: #5a3b30;
+  --moss: #2f7d4f;
+  --moss-deep: #256640;
+  --skin: #f3e9e3;
+  --rule: #cfd3db;
+  --link: #3f5a8a;
+  --display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --text: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --measure: 36em;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1f26;
+    --paper-deep: #22262f;
+    --ink: #e9e7ec;
+    --ink-soft: #a8a6b0;
+    --room: #11141a;
+    --room-edge: #2a2f3a;
+    --hair: #c79a85;
+    --moss: #4fa872;
+    --moss-deep: #3c8c5a;
+    --skin: #2a2a30;
+    --rule: #353a45;
+    --link: #93aee0;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.9;
+  font-feature-settings: "palt";
+}
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--moss); outline-offset: 3px; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; letter-spacing: 0.01em; }
+h2 { font-size: 1.7rem; line-height: 1.5; margin-bottom: 0.8em; }
+h3 { font-size: 1.1rem; line-height: 1.6; }
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+ul, ol, dl { margin: 0; padding: 0; }
+strong { font-weight: 700; }
+small { font-size: 0.78em; }
+
+/* 上の帯 */
+.top {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 22px 16px 0;
+  max-width: 1080px; margin: 0 auto;
+}
+.brand { font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+.topnav { display: flex; gap: 22px; font-size: 0.95rem; }
+.topnav a { color: var(--ink-soft); text-decoration: none; }
+.topnav a:hover { color: var(--ink); text-decoration: underline; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; }
+
+/* ヒーロー: 右下にアプリの窓を、画面での位置どおりに置く */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  gap: 40px;
+  align-items: end;
+  padding-top: 72px;
+  padding-bottom: 48px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  line-height: 1.45;
+  margin-bottom: 0.7em;
+  color: var(--ink);
+}
+.lead { font-size: 1.05rem; }
+.dl { margin-top: 2em; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.dl-note { color: var(--ink-soft); font-size: 0.92rem; }
+
+.btn {
+  display: inline-flex; flex-direction: column; justify-content: center;
+  min-height: 52px; padding: 8px 22px;
+  border: 1.5px solid var(--ink); border-radius: 8px;
+  color: var(--ink); background: transparent;
+  font-family: var(--text); font-weight: 500; font-size: 1rem; line-height: 1.35;
+  text-decoration: none;
+}
+.btn small { color: var(--ink-soft); font-weight: 400; }
+.btn:hover { background: var(--paper-deep); }
+.btn-primary { background: var(--moss); border-color: var(--moss); color: #fff; font-weight: 700; padding: 8px 28px; }
+.btn-primary:hover { background: var(--moss-deep); border-color: var(--moss-deep); }
+.btn.is-mine { border-color: var(--moss); box-shadow: inset 0 0 0 1px var(--moss); }
+
+.hero-shot {
+  margin: 0;
+  justify-self: end;
+  background: var(--room);
+  border: 1px solid var(--room-edge);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 30px 60px -30px rgba(20, 24, 34, 0.55);
+}
+.hero-shot img { border-radius: 8px; }
+.hero-shot figcaption { color: #b8bcc6; font-size: 0.85rem; padding: 10px 4px 2px; margin: 0; }
+
+/* 一日の流れ: 本当に順番があるので番号を付ける */
+.steps { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.steps li { counter-increment: step; position: relative; padding-top: 14px; border-top: 1.5px solid var(--ink); }
+.steps li::before {
+  content: counter(step);
+  font-family: var(--display); font-size: 1.1rem; color: var(--hair);
+  display: block; margin-bottom: 4px;
+}
+.steps p { font-size: 0.98rem; margin-bottom: 0; }
+
+/* ペルソナの作業 */
+.work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 48px; align-items: start; }
+.choices > div { border-top: 1px solid var(--rule); padding: 14px 0; max-width: var(--measure); }
+.choices > div:last-child { border-bottom: 1px solid var(--rule); }
+.choices dt { font-weight: 700; }
+.choices dd { margin: 2px 0 0; color: var(--ink-soft); font-size: 0.98rem; }
+.work-shot { margin: 0; justify-self: end; background: var(--room); border: 1px solid var(--room-edge); border-radius: 12px; padding: 8px; }
+.work-shot img { border-radius: 6px; }
+
+/* 入れる */
+.os { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 1.2em 0 0.8em; }
+.version { color: var(--ink-soft); font-size: 0.92rem; }
+.install h3 { margin-top: 2.2em; margin-bottom: 0.5em; }
+.needs { list-style: none; max-width: var(--measure); }
+.needs li { padding: 10px 0 10px 18px; border-left: 2px solid var(--rule); margin-bottom: 8px; }
+
+/* 見ないもの: この節だけ地の色を変え、宣言として読ませる */
+.privacy { background: var(--skin); margin: 0 -16px; padding: 64px 16px; border-bottom: 0; }
+.privacy > * { max-width: 640px; margin-left: auto; margin-right: auto; }
+.rules { list-style: none; }
+.rules li { padding: 12px 0; border-top: 1px solid var(--rule); }
+.rules li:last-child { border-bottom: 1px solid var(--rule); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .privacy { background: var(--paper-deep); }
+}
+
+/* スマホ */
+.phone { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 48px; align-items: center; border-bottom: 0; }
+.phone-shot { margin: 0; background: var(--room); border: 1px solid var(--room-edge); border-radius: 28px; padding: 8px; width: 230px; }
+.phone-shot img { border-radius: 20px; }
+
+.foot { border-top: 1px solid var(--rule); max-width: 1080px; margin: 0 auto; padding: 40px 16px 56px; color: var(--ink-soft); font-size: 0.92rem; }
+.foot p { max-width: none; margin-bottom: 0.6em; }
+.foot-brand { font-family: var(--display); color: var(--ink); font-size: 1.1rem; margin-top: 1.6em; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; align-items: start; padding-top: 48px; }
+  .hero-shot { justify-self: stretch; max-width: 420px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work { grid-template-columns: 1fr; }
+  .work-shot { justify-self: start; max-width: 360px; }
+  .phone { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .steps { grid-template-columns: 1fr; }
+  .topnav { gap: 14px; font-size: 0.9rem; }
+  .os li, .os .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: background-color 120ms ease; }
+}
