@@ -67,7 +67,7 @@ small { font-size: 0.78em; }
 }
 .brand { font-family: var(--display); font-weight: 700; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
 .topnav { display: flex; gap: 22px; font-size: 0.95rem; }
-.topnav a { color: var(--ink-soft); text-decoration: none; }
+.topnav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; }
 .topnav a:hover { color: var(--ink); text-decoration: underline; }
 
 main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
@@ -159,7 +159,7 @@ section:last-of-type { border-bottom: 0; }
 .needs-sub { list-style: none; margin-top: 6px; }
 .needs-sub li { padding: 6px 0 6px 14px; }
 
-/* 見ないもの: Hero の直後。この節だけ地の色を変え、宣言として読ませる */
+/* 見ないもの: 入れるの直前。この節だけ地の色を変え、宣言として読ませる */
 .privacy { background: var(--skin); margin: 0; padding: 56px 24px; border-bottom: 0; border-radius: 12px; }
 .privacy > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
 .privacy p { max-width: var(--measure); margin-left: 0; }
@@ -195,7 +195,7 @@ section:last-of-type { border-bottom: 0; }
 @media (max-width: 520px) {
   body { font-size: 16px; }
   .steps { grid-template-columns: 1fr; }
-  .topnav { gap: 14px; font-size: 0.9rem; }
+  .topnav { flex-wrap: wrap; justify-content: flex-end; gap: 4px 14px; font-size: 0.9rem; }
   .meta > div { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (prefers-reduced-motion: no-preference) {

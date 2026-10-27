@@ -24,6 +24,7 @@
 <header class="top">
   <a class="brand" href="#">tonari</a>
   <nav class="topnav" aria-label="ページ内">
+    <a href="#needs">費用</a>
     <a href="#privacy">見ないもの</a>
     <a href="#install">入れる</a>
     <a href="#faq">よくある質問</a>
@@ -53,19 +54,6 @@
       <span class="video-buttons"><button type="button" class="vbtn" id="unmute">声を聞く</button><button type="button" class="vbtn" id="pause" aria-pressed="false">止める</button></span>
     </figcaption>
   </figure>
-</section>
-
-<section class="privacy" id="privacy" aria-labelledby="privacy-title">
-  <h2 id="privacy-title">見ないもの、送らないもの</h2>
-  <p>隣にいるためのアプリなので、あなたを見張るものにはしていません。</p>
-  <ul class="rules">
-    <li>画面の内容もキー入力の中身も見ません。カメラもマイクも使いません。あなたの様子として使うのは「最後に入力してから何秒たったか」だけです。</li>
-    <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面とキー入力は送りません。「手伝う」を選んだときは、任せたリポジトリの複製のファイルを AI が読むので、その中身も AI の提供元に送られます。「見守る」では、Claude が書いたコミットの件名とブランチ名を送ります。Claude Code・OpenCode・API キーのどれも使わないときは、今日の宣言と休憩中の返事、ペルソナの作業の出来事を tonari のサーバーに送ります。サーバーはそれを AI の提供元（AWS の Bedrock）に渡し、独り言と休憩の会話を作ります。</li>
-    <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身を見て止めていますが、すべては防げません。</li>
-    <li>起動したときに 1 日 1 回、新しい版があるかを GitHub に聞きます。あなたを見分けるものは送りません。設定のファイル（<code>user.yaml</code>）で切れます。</li>
-    <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。tonari のサーバーは、送られた本文と IP アドレスを残しません。残すのは、サーバーが発行する無記名のトークン（のハッシュ）、日ごとの回数、送信元を見分けるために IP アドレスから作った値です。</li>
-    <li>ランキングはありません。連続の日数は出しますが、途切れても責めません。</li>
-  </ul>
 </section>
 
 <section class="flow" aria-labelledby="flow-title">
@@ -130,6 +118,19 @@
     </li>
     <li><strong>声（任意）。</strong>ペルソナは <a href="https://aivis-project.com/">AivisSpeech</a> の声で話します。初めて起動したときの「はじめに、声の準備」で「声を入れる」を押すと、tonari が入れます（約 1.8GB）。入れなければ字幕だけになります。</li>
     <li><strong>Node.js。</strong>ペルソナが自分のプロジェクトで使います。初めて始めるときに tonari が落とします（約 50MB。自分で入れている Node.js とは別に置きます）。</li>
+  </ul>
+</section>
+
+<section class="privacy" id="privacy" aria-labelledby="privacy-title">
+  <h2 id="privacy-title">見ないもの、送らないもの</h2>
+  <p>隣にいるためのアプリなので、あなたを見張るものにはしていません。</p>
+  <ul class="rules">
+    <li>画面の内容もキー入力の中身も見ません。カメラもマイクも使いません。あなたの様子として使うのは「最後に入力してから何秒たったか」だけです。</li>
+    <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面とキー入力は送りません。「手伝う」を選んだときは、任せたリポジトリの複製のファイルを AI が読むので、その中身も AI の提供元に送られます。「見守る」では、Claude が書いたコミットの件名とブランチ名を送ります。Claude Code・OpenCode・API キーのどれも使わないときは、今日の宣言と休憩中の返事、ペルソナの作業の出来事を tonari のサーバーに送ります。サーバーはそれを AI の提供元（AWS の Bedrock）に渡し、独り言と休憩の会話を作ります。</li>
+    <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身を見て止めていますが、すべては防げません。</li>
+    <li>起動したときに 1 日 1 回、新しい版があるかを GitHub に聞きます。あなたを見分けるものは送りません。設定のファイル（<code>user.yaml</code>）で切れます。</li>
+    <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。tonari のサーバーは、送られた本文と IP アドレスを残しません。残すのは、サーバーが発行する無記名のトークン（のハッシュ）、日ごとの回数、送信元を見分けるために IP アドレスから作った値です。</li>
+    <li>ランキングはありません。連続の日数は出しますが、途切れても責めません。</li>
   </ul>
 </section>
 
