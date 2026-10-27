@@ -159,7 +159,7 @@ section:last-of-type { border-bottom: 0; }
 .needs-sub { list-style: none; margin-top: 6px; }
 .needs-sub li { padding: 6px 0 6px 14px; }
 
-/* 見ないもの: 入れるの直前。この節だけ地の色を変え、宣言として読ませる */
+/* 見ないもの: 入れるの後、よくある質問の前。この節だけ地の色を変え、宣言として読ませる */
 .privacy { background: var(--skin); margin: 0; padding: 56px 24px; border-bottom: 0; border-radius: 12px; }
 .privacy > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
 .privacy p { max-width: var(--measure); margin-left: 0; }
