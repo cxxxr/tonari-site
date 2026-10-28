@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お支払い - tonari</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./">tonari</a>
+</header>
+
+<main>
+<section class="doc">
+  <!-- tonari のサーバーが、申し込み（Stripe の Checkout）とお支払いの管理（Customer Portal）から戻す先（TONARI_SERVER_RETURN_URL）。
+       申し込みからは ?checkout=done か ?checkout=cancel が付く。付いていなければお支払いの管理から戻った -->
+  <div data-when="done" hidden>
+    <h1>お申し込みありがとうございます</h1>
+    <p>tonari に戻ってください。数十秒のうちに、パネルに「続けて使えます」と出ます。</p>
+    <p>出ないときは、tonari の設定（歯車）を開くと、お支払いの状態を確かめ直します。</p>
+  </div>
+  <div data-when="cancel" hidden>
+    <h1>申し込みは済んでいません</h1>
+    <p>お支払いを途中でやめました。料金はかかっていません。</p>
+    <p>続けて使うときは、tonari のパネルか、設定（歯車）の「お支払い」の「続けて使う」から、もう一度申し込んでください。</p>
+  </div>
+  <div data-when="portal">
+    <h1>tonari に戻ってください</h1>
+    <p>申し込みやお支払いの管理で変えたこと（申し込み・解約・カードの変更）は、そのまま tonari に届きます。</p>
+  </div>
+  <p><a href="tokushoho.html">特定商取引法に基づく表記</a> ・ <a href="terms.html">利用規約</a></p>
+</section>
+</main>
+
+<footer class="foot">
+  <p class="foot-brand">tonari</p>
+</footer>
+<script>
+  // 外へは何も送らない。URL の checkout の値で、出す文を選ぶだけ
+  const when = new URLSearchParams(location.search).get("checkout");
+  const shown = when === "done" || when === "cancel" ? when : "portal";
+  for (const el of document.querySelectorAll("[data-when]")) el.hidden = el.dataset.when !== shown;
+</script>
+</body>
+</html>

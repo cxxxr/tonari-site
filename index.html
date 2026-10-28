@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tonari - 隣の席で AI が作業する集中アプリ</title>
-<meta name="description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。画面の隅でペルソナが自分の作業をし、25 分ごとに「そっちどう？」と声をかけます。macOS・Windows・Linux。画面もキー入力も見ません。">
+<meta name="description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。画面の隅でペルソナが自分の作業をし、25 分ごとに「そっちどう？」と声をかけます。14 日間無料、その後は月額 800 円。macOS・Windows・Linux。画面もキー入力も見ません。">
 <meta property="og:title" content="tonari">
 <meta property="og:site_name" content="tonari">
 <meta property="og:locale" content="ja_JP">
@@ -38,7 +38,7 @@
   <div class="hero-text">
     <h1 id="hero-title"><span class="nw">隣の席で AI が作業している、</span><br><span class="nw">集中のための</span><span class="nw">デスクトップアプリ。</span></h1>
     <p class="lead">一人だと手が止まりがちな人のためのアプリです。画面の隅で AI のキャラクター（ペルソナ）が自分のプロジェクトを進め、ときどき独り言を言います。その隣で自分の作業をして、25 分たつと休憩。「そっちどう？」と声がかかります。</p>
-    <p class="facts">今の版は無料で、アカウントも要りません。プログラマでなくても使えます。macOS（Apple シリコン）・Windows・Linux。画面もキー入力も見ません。</p>
+    <p class="facts">入れるのは無料で、14 日間はそのまま試せます。続けて使うなら月額 800 円。アカウントは要りません。プログラマでなくても使えます。macOS（Apple シリコン）・Windows・Linux。画面もキー入力も見ません。</p>
     <div class="dl" id="dl">
       <a class="btn btn-primary" id="dl-main" href="#install">ダウンロード</a>
       <a class="dl-note" id="dl-note" href="#install">ほかの OS と、初めて開くときの手順</a>
@@ -110,7 +110,8 @@
 <section class="needs-section" id="needs" aria-labelledby="needs-title">
   <h2 id="needs-title">用意するものと費用</h2>
   <ul class="needs">
-    <li><strong>考えるのに使う AI（任意）。</strong>入れなくても始められます。そのときは、独り言と休憩の会話を tonari のサーバーで作り、ペルソナの作業は「録画を流す」か「見守る」になります。サーバーには 1 日の回数の上限があり、超えた日は決まった文で話します。ペルソナに本当に作業もさせるなら、どちらかを入れます。
+    <li><strong>月額プラン（14 日間は無料）。</strong>独り言と休憩の会話は tonari のサーバーで作ります。PC で初めて使った日から 14 日間は無料で、カードの登録も要りません。続けて使うなら月額 800 円（税込）で、tonari のパネルか設定の「続けて使う」から申し込みます。申し込まなくても、録画の再生と見守りはそのまま使え、独り言は決まった文になります。1 つの申し込みで PC 2 台まで使えます。解約はいつでもでき、払った期間の終わりまで使えます（<a href="tokushoho.html">特定商取引法に基づく表記</a>・<a href="terms.html">利用規約</a>）。</li>
+    <li><strong>考えるのに使う AI（任意）。</strong>入れなくても始められます。そのときは、独り言と休憩の会話を tonari のサーバーで作り（上の月額プラン）、ペルソナの作業は「録画を流す」か「見守る」になります。ペルソナに本当に作業もさせるなら、どちらかを入れます。
       <ul class="needs-sub">
         <li><strong>OpenCode。</strong>パネルの案内か、設定（歯車）の「作業に使う AI」で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
         <li><strong>Anthropic の API キー。</strong>Claude を使います。独り言とペルソナの作業の分だけ、API の利用料を Anthropic に払います。目安は 2026 年 10 月の作者の手元の例で、独り言が 1 区切り（25 分）で数円、ペルソナが本当に自分のプロジェクトを進める分が 1 区切り数百円から千円ほどでした。モデルと作業量で大きく変わります。「見守る」は独り言の分だけです。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。</li>
@@ -147,10 +148,10 @@
   <p>隣にいるためのアプリなので、あなたを見張るものにはしていません。</p>
   <ul class="rules">
     <li>画面の内容もキー入力の中身も見ません。カメラもマイクも使いません。あなたの様子として使うのは「最後に入力してから何秒たったか」だけです。</li>
-    <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面とキー入力は送りません。「手伝う」を選んだときは、任せたリポジトリの複製のファイルを AI が読むので、その中身も AI の提供元に送られます。「見守る」では、Claude が書いたコミットの件名とブランチ名を送ります。Claude Code・OpenCode・API キーのどれも使わないときは、今日の宣言と休憩中の返事、ペルソナの作業の出来事を tonari のサーバーに送ります。サーバーはそれを AI の提供元（AWS の Bedrock）に渡し、独り言と休憩の会話を作ります。</li>
+    <li>AI に送るのは、あなたが書いた今日の宣言と休憩中の返事、そしてペルソナ自身の作業の出来事（読んだファイルの名前や結果の要約）です。あなたの画面とキー入力は送りません。「手伝う」を選んだときは、任せたリポジトリの複製のファイルを AI が読むので、その中身も AI の提供元に送られます。「見守る」では、Claude が書いたコミットの件名とブランチ名を送ります。OpenCode も API キーも使わないときは、今日の宣言と休憩中の返事、ペルソナの作業の出来事を tonari のサーバーに送ります。サーバーはそれを AI の提供元（AWS の Bedrock）に渡し、独り言と休憩の会話を作ります。</li>
     <li>ペルソナが書き込むのは自分の作業場所だけです。打つコマンドは中身を見て止めていますが、すべては防げません。</li>
     <li>起動したときに 1 日 1 回、新しい版があるかを GitHub に聞きます。あなたを見分けるものは送りません。設定のファイル（<code>user.yaml</code>）で切れます。</li>
-    <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。tonari のサーバーは、送られた本文と IP アドレスを残しません。残すのは、サーバーが発行する無記名のトークン（のハッシュ）、日ごとの回数、送信元を見分けるために IP アドレスから作った値です。</li>
+    <li>記録（宣言、集中の度合い、独り言）はあなたの PC の中にだけ残ります。tonari のサーバーは、送られた本文と IP アドレスを残しません。残すのは、サーバーが発行する無記名のトークン（のハッシュ）、日ごとの回数、送信元を見分けるために IP アドレスから作った値です。月額プランを申し込んだ人については、それに加えて、トークン（のハッシュ）と Stripe の申し込みの番号・顧客の番号・状態を結んで残します。名前・メールアドレス・カードの情報は Stripe が持ち、tonari のサーバーには残しません。</li>
     <li>ランキングはありません。連続の日数は出しますが、途切れても責めません。</li>
   </ul>
 </section>
@@ -160,11 +161,15 @@
   <dl class="qa">
     <div>
       <dt>お金はかかりますか？</dt>
-      <dd>今の版は無料で、tonari に払うものはありません。考えるのに使う AI を入れないか、OpenCode の無料のモデルにすれば、ほかにかかる費用もありません。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#needs">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
+      <dd>入れるのは無料で、14 日間は無料で試せます。続けて独り言と会話を tonari のサーバーで作るなら、月額 800 円（税込）です。申し込まなくても、録画の再生と見守りは使えます。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#needs">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
+    </div>
+    <div>
+      <dt>解約はどうしますか？</dt>
+      <dd>申し込んだ PC の tonari の設定（歯車）の「お支払い」から「お支払いの管理」を開いて解約します。PC が手元に無いときは、<a href="tokushoho.html">特定商取引法に基づく表記</a>にあるお支払いの管理のページで、申し込みに使ったメールアドレスでログインして解約できます。解約しても、払った期間の終わりまで使えます。</dd>
     </div>
     <div>
       <dt>何がどこに送られますか？</dt>
-      <dd>上の<a href="#privacy">「見ないもの、送らないもの」</a>のとおりです。送り先は、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）です。AI を入れていないときは tonari のサーバーで、サーバーから AWS の Bedrock に渡ります。ほかに、新しい版があるかを GitHub に 1 日 1 回聞きます。</dd>
+      <dd>上の<a href="#privacy">「見ないもの、送らないもの」</a>のとおりです。送り先は、選んだ AI の提供元（Anthropic か、OpenCode で選んだモデルの提供元）です。AI を入れていないときは tonari のサーバーで、サーバーから AWS の Bedrock に渡ります。月額プランの支払いは Stripe が受けます。ほかに、新しい版があるかを GitHub に 1 日 1 回聞きます。</dd>
     </div>
     <div>
       <dt>ペルソナは本当に AI ですか？</dt>
@@ -194,10 +199,11 @@
 <footer class="foot">
   <dl class="meta">
     <div><dt>作者</dt><dd><a href="https://github.com/cxxxr">cxxxr</a>。一人の部屋だと手が止まるので、隣で誰かが作業している状態を自分の机に作りました。</dd></div>
-    <div><dt>種別</dt><dd>デスクトップアプリ。今の版は無料。このページは v0.6.0 の時点の説明で、費用や用意するものは版が上がると変わることがあります。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span></dd></div>
+    <div><dt>種別</dt><dd>デスクトップアプリ。入れるのは無料で、月額プランは 14 日間無料。このページは 【版】 の時点の説明で、費用や用意するものは版が上がると変わることがあります。<span id="meta-version">最新の版は <a href="https://github.com/cxxxr/tonari-releases/releases/latest">Releases</a> を見てください。</span></dd></div>
     <div><dt>アバター</dt><dd>既定のアバターは VRoid Hub で配布されているモデルで、再配布・改変・商用利用が許されていて、クレジットの表記は要りません。付属のサンプルのアバターは、pixiv Inc. の VRM 1.0 のサンプルモデル（(c) 2022 pixiv Inc.、<a href="https://vrm.dev/licenses/1.0/">VRM Public License 1.0</a>）です。自分の VRM に替えられます。</dd></div>
     <div><dt>声</dt><dd>既定の声は AivisSpeech の凛音エルです。声のモデルの利用規約は、AivisHub のモデルのページで確認してください。</dd></div>
     <div><dt>このページ</dt><dd>最新の版の番号とファイルの場所を GitHub から取ります。それ以外に外へ送るものはなく、計測もしていません。</dd></div>
+    <div><dt>表記</dt><dd><a href="tokushoho.html">特定商取引法に基づく表記</a>・<a href="terms.html">利用規約</a></dd></div>
   </dl>
   <p class="foot-brand">tonari</p>
 </footer>
