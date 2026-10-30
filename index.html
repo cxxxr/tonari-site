@@ -47,7 +47,7 @@
   <figure class="hero-shot">
     <video id="hero-video" width="460" height="640" autoplay muted loop playsinline preload="metadata" poster="video/story-poster.jpg" aria-label="tonari の一日の録画（78 秒）。宣言、作業の始まり、テストが落ちて悩む、通って喜ぶ、25 分後の声かけ、休憩中の短い会話">
       <source src="video/story.mp4" type="video/mp4">
-      <img src="images/screenshot.png" width="460" height="640" alt="休憩中の tonari。ペルソナが画面の隅にいて、パネルに残り時間と「そっちどう？」の入力欄が出ている">
+      <img src="images/screenshot.png" width="460" height="640" alt="ポモドーロの休憩中の tonari。ペルソナが画面の隅にいて、パネルに休憩の残り時間とペルソナに話しかける入力欄が出ている">
     </video>
     <figcaption>
       <span>tonari の実際の画面を録って、6 場面を 78 秒につないだものです。ペルソナの作業は前の回の記録を再生したもので、声はあとから同じ声で付けました。あなた側の入力は撮影用に打ったものです。右下に、このくらいの大きさでいます。</span>
@@ -69,11 +69,11 @@
     </li>
     <li>
       <h3>好きなときに休憩</h3>
-      <p>休みたくなったら「休憩する」を押します。ペルソナも手を止め、入力欄から短く話せます。「再開する」か、席を離れて戻ってくると作業に戻ります。25 分ごとに決まった長さで休みたいなら、始めるときにポモドーロを選びます。</p>
+      <p>休みたくなったら「休憩する」を押します。ペルソナも手を止め、入力欄から短く話せます。「再開する」を押すか、席を離れて 5 分以上たってから戻ると、作業に戻ります。25 分ごとに決まった長さで休みたいなら、始めるときにポモドーロを選びます。</p>
     </li>
     <li>
       <h3>振り返って、少し雑談</h3>
-      <p>作業時間が来るか「ここで終わる」を押すと、「どこまでいった？」と聞かれます。宣言どおりに進んだかと、集中の度合いをボタンで答えます。そのあとは雑談の時間で、「おしまい」を押すまでペルソナと話せます。窓の × で終えるときも、締めの一言のあとに終わりの画面が出ます。「閉じる」でアプリを終了します。</p>
+      <p>作業時間が来ると、ペルソナが「おしまいにする / もう少しやる」を聞きます。おしまいにするか「ここで終わる」を押すと、「どこまでいった？」と聞かれます。宣言どおりに進んだかと、集中の度合いをボタンで答えます。そのあとは雑談の時間で、「おしまい」を押すまでペルソナと話せます。窓の × で終えるときも、締めの一言のあとに終わりの画面が出ます。「閉じる」でアプリを終了します。</p>
     </li>
   </ol>
 </section>
@@ -110,13 +110,13 @@
 <section class="needs-section" id="needs" aria-labelledby="needs-title">
   <h2 id="needs-title">用意するものと費用</h2>
   <ul class="needs">
-    <li><strong>月額プラン（14 日間は無料）。</strong>独り言と休憩の会話は tonari のサーバーで作ります。PC で初めて使った日から 14 日間は無料で、カードの登録も要りません。続けて使うなら月額 800 円（税込）で、tonari のパネルか設定の「続けて使う」から申し込みます。申し込まなくても、録画の再生と見守りはそのまま使え、独り言は決まった文になります。1 つの申し込みで PC 2 台まで使えます。解約はいつでもでき、払った期間の終わりまで使えます（<a href="tokushoho.html">特定商取引法に基づく表記</a>・<a href="terms.html">利用規約</a>）。</li>
+    <li><strong>月額プラン（14 日間は無料）。</strong>独り言と休憩の会話は tonari のサーバーで作ります。PC で初めて使った日から 14 日間は無料で、カードの登録も要りません。続けて使うなら月額 800 円（税込）で、tonari のパネルか設定の「続けて使う」から申し込みます。申し込まなくても、前の作業をなぞる・見守るはそのまま使え、独り言は決まった文になります。1 つの申し込みで PC 2 台まで使えます。解約はいつでもでき、払った期間の終わりまで使えます（<a href="tokushoho.html">特定商取引法に基づく表記</a>・<a href="terms.html">利用規約</a>）。</li>
     <li><strong>考えるのに使う AI（任意）。</strong>入れなくても始められます。そのときは、独り言と休憩の会話を tonari のサーバーで作り（上の月額プラン）、ペルソナの作業は「前の作業をなぞる」か「見守る」になります。ペルソナに本当に作業もさせるなら、作業の選択の「＋ ペルソナに作業もさせる…」から、どちらかを選びます。
       <ul class="needs-sub">
         <li><strong>OpenCode。</strong>設定（歯車）の「作業に使う AI」で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
-        <li><strong>Codex。</strong><a href="https://developers.openai.com/codex/cli/">Codex CLI</a> を入れて <code>codex login</code> しておき、「作業に使う AI」で選びます。使うのはその Codex の利用枠か API の費用です。</li>
+        <li><strong>Codex。</strong><a href="https://developers.openai.com/codex/cli/">Codex CLI</a> を入れて <code>codex login</code> してから tonari を起動し直し、「作業に使う AI」で選びます。使うのはその Codex の利用枠か API の費用です。独り言と休憩の会話は、そのときも tonari のサーバー（上の月額プラン）で作ります。</li>
       </ul>
-      独り言と休憩の会話を Anthropic の API キーで作ることもできます。使った分の API の利用料を Anthropic に払います（目安は 2026 年 10 月の作者の手元の例で、1 区切り（25 分）数円）。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。
+      独り言と休憩の会話を Anthropic の API キーで作ることもできます。使った分の API の利用料を Anthropic に払います（目安は 2026 年 10 月の作者の手元の例で、25 分の作業で数円）。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。
     </li>
     <li><strong>声（任意）。</strong>ペルソナは <a href="https://aivis-project.com/">AivisSpeech</a> の声で話します。初めて起動したときの「はじめに、声の準備」で「声を入れる」を押すと、tonari が入れます（約 1.8GB）。入れなければ字幕だけになります。</li>
     <li><strong>Node.js。</strong>ペルソナが自分のプロジェクトで使います。初めて始めるときに tonari が落とします（約 50MB。自分で入れている Node.js とは別に置きます）。</li>
@@ -162,7 +162,7 @@
   <dl class="qa">
     <div>
       <dt>お金はかかりますか？</dt>
-      <dd>入れるのは無料で、14 日間は無料で試せます。続けて独り言と会話を tonari のサーバーで作るなら、月額 800 円（税込）です。申し込まなくても、録画の再生と見守りは使えます。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#needs">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
+      <dd>入れるのは無料で、14 日間は無料で試せます。続けて独り言と会話を tonari のサーバーで作るなら、月額 800 円（税込）です。申し込まなくても、前の作業をなぞる・見守るは使えます。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#needs">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
     </div>
     <div>
       <dt>解約はどうしますか？</dt>
