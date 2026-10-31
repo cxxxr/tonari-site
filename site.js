@@ -9,7 +9,8 @@
   };
   const ua = navigator.userAgent;
   // スマホは先に見分ける（iPhone の UA は Mac に、Android の UA は Linux に当たるため）
-  const mobile = /iPhone|iPad|iPod|Android|Mobile/.test(ua);
+  // iPad の Safari は Mac と名乗るので、触れる画面の数で見分ける
+  const mobile = /iPhone|iPad|iPod|Android|Mobile/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
   const mine = mobile ? null : /Mac/.test(ua) ? "mac" : /Win/.test(ua) ? "win" : /Linux|X11/.test(ua) ? "deb" : null;
   const buttons = Array.from(document.querySelectorAll("#os .btn"));
   const main = document.getElementById("dl-main");
@@ -20,10 +21,7 @@
     main.textContent = "PC でダウンロードしてください";
     note.textContent = "対応は macOS・Windows・Linux の PC です";
     // ブラウザ版もスマホでは確かめていないので、ブラウザ版の案内（とページの最後の節）は出さず、ダウンロードの案内を主にする
-    const web = document.getElementById("dl-web");
-    if (web) web.hidden = true;
-    const closing = document.getElementById("closing");
-    if (closing) closing.hidden = true;
+    for (const el of document.querySelectorAll("[data-pc-only]")) el.hidden = true;
     main.classList.add("btn-primary");
   }
   const mineBtn = buttons.find((b) => b.dataset.os === mine);
@@ -108,4 +106,17 @@
       pause.setAttribute("aria-pressed", "true");
     }
   });
+})();
+
+// 折りたたんだ説明（details）の中へのリンクで来たら、開いてから見せる
+(() => {
+  const open = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const el = id && document.getElementById(id);
+    if (!el) return;
+    const d = el.closest("details");
+    if (d && !d.open) { d.open = true; el.scrollIntoView(); }
+  };
+  window.addEventListener("hashchange", open);
+  open();
 })();

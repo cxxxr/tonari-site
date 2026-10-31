@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tonari - 隣の席で AI が作業する集中アプリ</title>
-<meta name="description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。画面の隅でペルソナが自分の作業をし、休憩はあなたのタイミングで取れます。入れずにブラウザでも試せます。14 日間無料、その後は月額 800 円。macOS・Windows・Linux。画面もキー入力も見ません。">
+<meta name="description" content="隣の席で AI が作業している、集中のためのアプリ。画面の隅でペルソナが自分の作業をし、休憩はあなたのタイミングで取れます。入れずにブラウザでも試せます。14 日間無料、その後は月額 800 円。macOS・Windows・Linux。画面もキー入力も見ません。">
 <meta property="og:title" content="tonari">
 <meta property="og:site_name" content="tonari">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:description" content="隣の席で AI が作業している、集中のためのデスクトップアプリ。macOS・Windows・Linux と、入れずに使えるブラウザ版。画面もキー入力も見ません。">
+<meta property="og:description" content="隣の席で AI が作業している、集中のためのアプリ。入れずにブラウザで試せて、macOS・Windows・Linux 版もあります。画面もキー入力も見ません。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://cxxxr.github.io/tonari-site/images/og.png">
 <meta property="og:image:width" content="1200">
@@ -41,13 +41,13 @@
     <p class="lead">一人だと手が止まりがちな人のためのアプリです。画面の隅で AI のキャラクター（ペルソナ）が自分のプロジェクトを進め、ときどき独り言を言います。その隣で自分の作業をして、休みたくなったら休憩。そのあいだはペルソナも手を止めます。</p>
     <p class="facts">14 日間は無料で、続けるなら月額 800 円。プログラマでなくても使えます。画面もキー入力も見ません。</p>
     <div class="dl" id="dl">
-      <div class="dl-group dl-web" id="dl-web">
-        <a class="btn btn-primary" href="https://app.tonari.code-contractor.ai/">ブラウザで試す</a>
-        <p class="dl-sub">インストール不要・登録不要・14 日間無料</p>
+      <div class="dl-group dl-web" data-pc-only>
+        <a class="btn btn-primary" href="https://app.tonari.code-contractor.ai/" aria-describedby="dl-web-sub">ブラウザで試す</a>
+        <p class="dl-sub" id="dl-web-sub">インストール不要・登録不要</p>
       </div>
       <div class="dl-group">
         <a class="btn" id="dl-main" href="#install">デスクトップ版をダウンロード</a>
-        <a class="dl-note" id="dl-note" href="#install">macOS・Windows・Linux と、初めて開くときの手順</a>
+        <a class="dl-note" id="dl-note" href="#install">macOS（Apple シリコン）・Windows・Linux と、初めて開くときの手順</a>
       </div>
     </div>
   </div>
@@ -121,7 +121,7 @@
   <ul class="needs">
     <li><strong>月額プラン（14 日間は無料）。</strong>独り言と休憩の会話は tonari のサーバーで作ります。PC（ブラウザ版ではそのブラウザかアカウント）で初めて使った日から 14 日間は無料で、カードの登録も要りません。続けて使うなら月額 800 円（税込）で、tonari のパネルか設定の「続けて使う」から申し込みます。申し込まなくても、前の作業をなぞる・見守るはそのまま使え、独り言は決まった文になります。1 つの申し込みで PC 2 台まで使えます。ブラウザ版はログインして申し込み、どの端末からでも同じ記録で使えます（同時に開けるのは 1 つ）。デスクトップ版とブラウザ版の申し込みは別々です。解約はいつでもでき、払った期間の終わりまで使えます（<a href="tokushoho.html">特定商取引法に基づく表記</a>・<a href="terms.html">利用規約</a>）。</li>
     <li><strong>考えるのに使う AI（任意）。</strong>入れなくても始められます。そのときは、独り言と休憩の会話を tonari のサーバーで作り（上の月額プラン）、ペルソナの作業は「前の作業をなぞる」か「見守る」になります。ペルソナに本当に作業もさせるなら、OpenCode か Codex を使います。
-      <details>
+      <details id="own-ai">
       <summary>OpenCode・Codex・API キーで使うとき</summary>
       <p>作業の選択の「＋ ペルソナに作業もさせる…」から、どちらかを選びます。</p>
       <ul class="needs-sub">
@@ -189,7 +189,7 @@
   <dl class="qa">
     <div>
       <dt>お金はかかりますか？</dt>
-      <dd>入れるのは無料で、14 日間は無料で試せます。続けて独り言と会話を tonari のサーバーで作るなら、月額 800 円（税込）です。申し込まなくても、前の作業をなぞる・見守るは使えます。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#needs">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
+      <dd>入れるのは無料で、14 日間は無料で試せます。続けて独り言と会話を tonari のサーバーで作るなら、月額 800 円（税込）です。申し込まなくても、前の作業をなぞる・見守るは使えます。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#own-ai">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
     </div>
     <div>
       <dt>解約はどうしますか？</dt>
@@ -222,13 +222,13 @@
   </dl>
 </section>
 
-<section class="closing" id="closing" aria-labelledby="closing-title">
+<section class="closing" id="closing" aria-labelledby="closing-title" data-pc-only>
   <h2 id="closing-title">まずは一回、隣で作業してもらう</h2>
   <p>ブラウザで開けば、入れずにそのまま始められます。</p>
   <div class="dl">
     <div class="dl-group dl-web">
-      <a class="btn btn-primary" href="https://app.tonari.code-contractor.ai/">ブラウザで試す</a>
-      <p class="dl-sub">インストール不要・登録不要・14 日間無料</p>
+      <a class="btn btn-primary" href="https://app.tonari.code-contractor.ai/" aria-describedby="closing-web-sub">ブラウザで試す</a>
+      <p class="dl-sub" id="closing-web-sub">インストール不要・登録不要・14 日間無料</p>
     </div>
     <a class="dl-note" href="#install">デスクトップ版を入れる</a>
   </div>
