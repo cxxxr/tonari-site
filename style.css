@@ -95,15 +95,17 @@ section:last-of-type, section:has(+ section[hidden]:last-of-type) { border-botto
 }
 .lead { font-size: 1.05rem; }
 .facts { color: var(--ink-soft); font-size: 0.95rem; }
-/* ボタンは同じ幅（ボタンと下の補足のうち、いちばん広いものに合わせる）。補足はボタンの下に置く */
+/* ボタンは同じ幅にそろえ、補足はボタンの下に置く */
 .dl { margin-top: 2em; display: grid; width: fit-content; max-width: 100%; gap: 18px; }
+/* 最初の画面は幅を決めておく（site.js がボタンと補足の文を差し替えても、幅も高さも変わらないように。どちらの文も 1 行に収まる長さにする） */
+#dl { width: min(100%, 23rem); }
 .dl-group { display: flex; flex-direction: column; gap: 6px; }
 .dl .btn { align-items: center; text-align: center; }
-.dl-sub { color: var(--ink-soft); font-size: 0.88rem; margin: 0; }
+.dl-sub { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
 .needs details { margin-top: 8px; }
 .needs summary { cursor: pointer; color: var(--link); }
 .needs details[open] summary { margin-bottom: 4px; }
-.dl-note { color: var(--ink-soft); font-size: 0.92rem; }
+.dl-note { color: var(--ink-soft); }
 
 .btn {
   display: inline-flex; flex-direction: column; justify-content: center;
