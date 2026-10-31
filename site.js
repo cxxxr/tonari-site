@@ -45,7 +45,7 @@
     // 自分の OS のファイルが分かったときだけ、上のボタンを直接のダウンロードにする
     if (mineBtn && /\/download\//.test(mineBtn.href)) {
       main.href = mineBtn.href;
-      const label = { mac: "macOS（Apple シリコン）", win: "Windows", deb: "Linux" }[mine];
+      const label = { mac: "Mac（Apple シリコン）", win: "Windows", deb: "Linux" }[mine];
       main.textContent = `${label} 向けをダウンロード`;
       note.textContent = `${tag ? tag + " ・ " : ""}ほかの OS と、初めて開くときの手順`;
     }
