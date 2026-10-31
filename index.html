@@ -16,7 +16,40 @@
 <meta property="og:image:alt" content="tonari の画面。画面の隅にペルソナがいて、パネルに残り時間と入力欄が出ている">
 <meta property="og:url" content="https://cxxxr.github.io/tonari-site/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cxxxr.github.io/tonari-site/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "tonari",
+  "url": "https://cxxxr.github.io/tonari-site/",
+  "description": "隣の席で AI が作業している、集中のためのアプリ。画面の隅でペルソナが自分の作業をし、休憩はあなたのタイミングで取れます。画面もキー入力も見ません。",
+  "image": "https://cxxxr.github.io/tonari-site/images/og.png",
+  "inLanguage": "ja",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "macOS (Apple silicon), Windows, Linux, Web browser",
+  "author": {
+    "@type": "Person",
+    "name": "cxxxr",
+    "url": "https://github.com/cxxxr"
+  },
+  "offers": {
+    "@type": "Offer",
+    "name": "月額プラン（初めて使った日から 14 日間は無料）",
+    "price": "800",
+    "priceCurrency": "JPY",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "800",
+      "priceCurrency": "JPY",
+      "valueAddedTaxIncluded": true,
+      "unitCode": "MON",
+      "billingIncrement": 1
+    }
+  }
+}
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -187,6 +220,18 @@
 <section class="faq" id="faq" aria-labelledby="faq-title">
   <h2 id="faq-title">よくある質問</h2>
   <dl class="qa">
+    <div>
+      <dt>ボディダブリングって何ですか？</dt>
+      <dd>誰かが隣で作業していると、自分の手も動きやすくなる、というやり方です。もくもく会や作業通話も同じ考えです。tonari では、その隣の誰かが AI のペルソナです。相手と時間を合わせなくてよく、見られている緊張もありません。</dd>
+    </div>
+    <div>
+      <dt>ポモドーロのタイマーと何が違いますか？</dt>
+      <dd>隣で作業している相手がいることです。始めるときに今日やることを宣言し、終わりに振り返ります。休憩は好きなときに取れます。25 分ごとに決まった長さで休みたいなら、ポモドーロも選べます。</dd>
+    </div>
+    <div>
+      <dt>本当に集中できますか？</dt>
+      <dd>人によります。14 日間は無料なので、合うかどうかは一回使って確かめてください。病気の治療や診断のためのものではありません。</dd>
+    </div>
     <div>
       <dt>お金はかかりますか？</dt>
       <dd>入れるのは無料で、14 日間は無料で試せます。続けて独り言と会話を tonari のサーバーで作るなら、月額 800 円（税込）です。申し込まなくても、前の作業をなぞる・見守るは使えます。Anthropic の API キーで使うときは、使った分の API の利用料を Anthropic に払います（<a href="#own-ai">用意するものと費用</a>）。費用や用意するものは版が上がると変わることがあり、変わるときは Releases のノートに書きます。</dd>
