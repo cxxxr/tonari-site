@@ -105,6 +105,7 @@ section:last-of-type { border-bottom: 0; }
   font-family: var(--text); font-weight: 500; font-size: 1rem; line-height: 1.35;
   text-decoration: none;
 }
+.btn[hidden] { display: none; }
 .btn small { color: var(--ink-soft); font-weight: 400; }
 .btn:hover { background: var(--paper-deep); }
 .btn-primary { background: var(--moss); border-color: var(--moss); color: var(--on-moss); font-weight: 700; padding: 8px 28px; }
