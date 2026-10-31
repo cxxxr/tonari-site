@@ -95,15 +95,16 @@ section:last-of-type, section:has(+ section[hidden]:last-of-type) { border-botto
 }
 .lead { font-size: 1.05rem; }
 .facts { color: var(--ink-soft); font-size: 0.95rem; }
-/* ボタンは同じ幅（ボタンと下の補足のうち、いちばん広いものに合わせる）。補足はボタンの下に置く */
-.dl { margin-top: 2em; display: grid; width: fit-content; max-width: 100%; gap: 18px; }
+/* ボタンは同じ幅（広いほうのボタンに合わせ、最低 23em。Mac 向けの長い文が収まる幅）。補足はボタンの下に置き、幅には数えない
+   （site.js が補足の文を差し替えても、ボタンの幅が変わらないように） */
+.dl { margin-top: 2em; display: grid; width: fit-content; min-width: min(23em, 100%); max-width: 100%; gap: 18px; }
 .dl-group { display: flex; flex-direction: column; gap: 6px; }
 .dl .btn { align-items: center; text-align: center; }
-.dl-sub { color: var(--ink-soft); font-size: 0.88rem; margin: 0; }
+.dl-sub { contain: inline-size; color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
 .needs details { margin-top: 8px; }
 .needs summary { cursor: pointer; color: var(--link); }
 .needs details[open] summary { margin-bottom: 4px; }
-.dl-note { color: var(--ink-soft); font-size: 0.92rem; }
+.dl-note { color: var(--ink-soft); font-size: 0.9rem; }
 
 .btn {
   display: inline-flex; flex-direction: column; justify-content: center;
