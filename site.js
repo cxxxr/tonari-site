@@ -19,9 +19,12 @@
   if (mobile) {
     main.textContent = "PC でダウンロードしてください";
     note.textContent = "対応は macOS・Windows・Linux の PC です";
-    // ブラウザ版もスマホでは確かめていないので、ボタンは出さない
+    // ブラウザ版もスマホでは確かめていないので、ブラウザ版の案内（とページの最後の節）は出さず、ダウンロードの案内を主にする
     const web = document.getElementById("dl-web");
     if (web) web.hidden = true;
+    const closing = document.getElementById("closing");
+    if (closing) closing.hidden = true;
+    main.classList.add("btn-primary");
   }
   const mineBtn = buttons.find((b) => b.dataset.os === mine);
   if (mineBtn) mineBtn.classList.add("is-mine");

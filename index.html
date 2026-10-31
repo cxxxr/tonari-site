@@ -37,13 +37,18 @@
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-text">
-    <h1 id="hero-title"><span class="nw">隣の席で AI が作業している、</span><br><span class="nw">集中のための</span><span class="nw">デスクトップアプリ。</span></h1>
+    <h1 id="hero-title"><span class="nw">隣の席で AI が作業している、</span><br><span class="nw">集中のための</span><span class="nw">アプリ。</span></h1>
     <p class="lead">一人だと手が止まりがちな人のためのアプリです。画面の隅で AI のキャラクター（ペルソナ）が自分のプロジェクトを進め、ときどき独り言を言います。その隣で自分の作業をして、休みたくなったら休憩。そのあいだはペルソナも手を止めます。</p>
-    <p class="facts">入れるのは無料で、14 日間はそのまま試せます。続けて使うなら月額 800 円。アカウントは要りません（ブラウザ版で申し込むときだけログインします）。プログラマでなくても使えます。macOS（Apple シリコン）・Windows・Linux。入れずにブラウザで試すこともできます。画面もキー入力も見ません。</p>
+    <p class="facts">14 日間は無料で、続けるなら月額 800 円。プログラマでなくても使えます。画面もキー入力も見ません。</p>
     <div class="dl" id="dl">
-      <a class="btn btn-primary" id="dl-main" href="#install">ダウンロード</a>
-      <a class="dl-note" id="dl-note" href="#install">ほかの OS と、初めて開くときの手順</a>
-      <a class="btn" id="dl-web" href="https://app.tonari.code-contractor.ai/">ブラウザで試す<small>入れずに、すぐ</small></a>
+      <div class="dl-group dl-web" id="dl-web">
+        <a class="btn btn-primary" href="https://app.tonari.code-contractor.ai/">ブラウザで試す</a>
+        <p class="dl-sub">インストール不要・登録不要・14 日間無料</p>
+      </div>
+      <div class="dl-group">
+        <a class="btn" id="dl-main" href="#install">デスクトップ版をダウンロード</a>
+        <a class="dl-note" id="dl-note" href="#install">macOS・Windows・Linux と、初めて開くときの手順</a>
+      </div>
     </div>
   </div>
   <figure class="hero-shot">
@@ -115,12 +120,16 @@
   <p>ここはデスクトップ版のことです。ブラウザ版で要るのは月額プランだけです（<a href="#web">ブラウザで使う</a>）。</p>
   <ul class="needs">
     <li><strong>月額プラン（14 日間は無料）。</strong>独り言と休憩の会話は tonari のサーバーで作ります。PC（ブラウザ版ではそのブラウザかアカウント）で初めて使った日から 14 日間は無料で、カードの登録も要りません。続けて使うなら月額 800 円（税込）で、tonari のパネルか設定の「続けて使う」から申し込みます。申し込まなくても、前の作業をなぞる・見守るはそのまま使え、独り言は決まった文になります。1 つの申し込みで PC 2 台まで使えます。ブラウザ版はログインして申し込み、どの端末からでも同じ記録で使えます（同時に開けるのは 1 つ）。デスクトップ版とブラウザ版の申し込みは別々です。解約はいつでもでき、払った期間の終わりまで使えます（<a href="tokushoho.html">特定商取引法に基づく表記</a>・<a href="terms.html">利用規約</a>）。</li>
-    <li><strong>考えるのに使う AI（任意）。</strong>入れなくても始められます。そのときは、独り言と休憩の会話を tonari のサーバーで作り（上の月額プラン）、ペルソナの作業は「前の作業をなぞる」か「見守る」になります。ペルソナに本当に作業もさせるなら、作業の選択の「＋ ペルソナに作業もさせる…」から、どちらかを選びます。
+    <li><strong>考えるのに使う AI（任意）。</strong>入れなくても始められます。そのときは、独り言と休憩の会話を tonari のサーバーで作り（上の月額プラン）、ペルソナの作業は「前の作業をなぞる」か「見守る」になります。ペルソナに本当に作業もさせるなら、OpenCode か Codex を使います。
+      <details>
+      <summary>OpenCode・Codex・API キーで使うとき</summary>
+      <p>作業の選択の「＋ ペルソナに作業もさせる…」から、どちらかを選びます。</p>
       <ul class="needs-sub">
         <li><strong>OpenCode。</strong>設定（歯車）の「作業に使う AI」で「tonari に入れてもらう」を押すと、tonari が <a href="https://opencode.ai/">OpenCode</a> を入れます（約 60MB）。無料のモデルがあります。無料のモデルは期間限定で、送った内容が提供元の学習に使われるものがあります。</li>
         <li><strong>Codex。</strong><a href="https://developers.openai.com/codex/cli/">Codex CLI</a> を入れて <code>codex login</code> してから tonari を起動し直し、「作業に使う AI」で選びます。使うのはその Codex の利用枠か API の費用です。独り言と休憩の会話は、そのときも tonari のサーバー（上の月額プラン）で作ります。</li>
       </ul>
       独り言と休憩の会話を Anthropic の API キーで作ることもできます。使った分の API の利用料を Anthropic に払います（目安は 2026 年 10 月の作者の手元の例で、25 分の作業で数円）。設定の手順は <a href="https://github.com/cxxxr/tonari-releases#readme">README</a> にあります。
+      </details>
     </li>
     <li><strong>声（任意）。</strong>ペルソナは <a href="https://aivis-project.com/">AivisSpeech</a> の声で話します。初めて起動したときの「はじめに、声の準備」で「声を入れる」を押すと、tonari が入れます（約 1.8GB）。入れなければ字幕だけになります。</li>
     <li><strong>Node.js。</strong>ペルソナが自分のプロジェクトで使います。初めて始めるときに tonari が落とします（約 50MB。自分で入れている Node.js とは別に置きます）。</li>
@@ -211,6 +220,18 @@
       <dd><a href="https://github.com/cxxxr/tonari-releases/issues">Issues</a> に書いてください。</dd>
     </div>
   </dl>
+</section>
+
+<section class="closing" id="closing" aria-labelledby="closing-title">
+  <h2 id="closing-title">まずは一回、隣で作業してもらう</h2>
+  <p>ブラウザで開けば、入れずにそのまま始められます。</p>
+  <div class="dl">
+    <div class="dl-group dl-web">
+      <a class="btn btn-primary" href="https://app.tonari.code-contractor.ai/">ブラウザで試す</a>
+      <p class="dl-sub">インストール不要・登録不要・14 日間無料</p>
+    </div>
+    <a class="dl-note" href="#install">デスクトップ版を入れる</a>
+  </div>
 </section>
 
 </main>
