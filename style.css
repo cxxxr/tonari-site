@@ -95,9 +95,10 @@ section:last-of-type, section:has(+ section[hidden]:last-of-type) { border-botto
 }
 .lead { font-size: 1.05rem; }
 .facts { color: var(--ink-soft); font-size: 0.95rem; }
-.dl { margin-top: 2em; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
-.dl-group { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.dl-web { flex-direction: column; align-items: flex-start; gap: 6px; }
+/* ボタンは同じ幅（ボタンと下の補足のうち、いちばん広いものに合わせる）。補足はボタンの下に置く */
+.dl { margin-top: 2em; display: grid; width: fit-content; max-width: 100%; gap: 18px; }
+.dl-group { display: flex; flex-direction: column; gap: 6px; }
+.dl .btn { align-items: center; text-align: center; }
 .dl-sub { color: var(--ink-soft); font-size: 0.88rem; margin: 0; }
 .needs details { margin-top: 8px; }
 .needs summary { cursor: pointer; color: var(--link); }
