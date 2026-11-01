@@ -4,7 +4,7 @@
 
 - 静的なページ（`index.html`・`style.css`・`site.js` と、下の月額プランのためのページ）。ビルドは無い
 - ダウンロードのボタンは、開いたときに tonari-releases の最新の Release から OS ごとのファイルの URL を引く（`site.js`）。引けないときは Releases のページへ
-- `images/` の screenshot は tonari-releases の README と同じもの、choose-work は配布版の扱いのリハーサル（tonari の `scripts/readme-shots.sh`）で撮った、AI が無いときの作業を選ぶ画面、og.png は OG 用（PIL で作った）。`video/` の動画は本物の回の録画を「録画を流す」で再生して録り、声を後から同じ声で付けたもの
+- `images/` の screenshot は tonari-releases の README と同じもの、choose-work は配布版の扱いのリハーサル（tonari の `scripts/readme-shots.sh`）で撮った、AI が無いときの作業を選ぶ画面、og.png は OG 用（PIL で作った）。`video/` の動画は本物の回の録画を作業の選択の「（収録）」の付いたボタンで再生して録り、声を後から同じ声で付けたもの
 - 検索向けに、`index.html` の頭に JSON-LD（料金・対応 OS）と canonical、`sitemap.xml`（検索に出すのは `index.html` だけ）を置いている。料金や対応 OS を変えたら JSON-LD も直す（料金は `offers` の `price` と `priceSpecification` の 2 か所）
 - 使い方の本文は書かない（README に任せる）。入れ方・はじめの準備・見ないものが変わる版を出すときは、README と一緒にここも直す
 - `tokushoho.html`（特定商取引法に基づく表記）・`terms.html`（利用規約）・`thanks.html`（tonari のサーバーが、申し込みとお支払いの管理から戻す先。`?checkout=done` か `?checkout=cancel` で文を選ぶ）は月額プランのためのページ。検索には出さない（noindex）
